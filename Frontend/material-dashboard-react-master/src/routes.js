@@ -54,8 +54,8 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/table",
-    name: "Table List",
+    path: "/ataglance",
+    name: "At A Glance",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
@@ -67,7 +67,8 @@ const dashboardRoutes = [
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
-    layout: "/admin"
+    layout: "/admin",
+    invisible: true
   },
   {
     path: "/icons",
@@ -75,7 +76,8 @@ const dashboardRoutes = [
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
-    layout: "/admin"
+    layout: "/admin",
+    invisible: true
   },
   {
     path: "/maps",
@@ -83,7 +85,8 @@ const dashboardRoutes = [
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
-    layout: "/admin"
+    layout: "/admin",
+    invisible: true
   },
   {
     path: "/notifications",
@@ -99,7 +102,8 @@ const dashboardRoutes = [
     rtlName: "پشتیبانی از راست به چپ",
     icon: Language,
     component: RTLPage,
-    layout: "/rtl"
+    layout: "/rtl",
+    invisible: true
   },
   {
     path: "/upgrade-to-pro",
@@ -107,7 +111,8 @@ const dashboardRoutes = [
     rtlName: "التطور للاحترافية",
     icon: Unarchive,
     component: UpgradeToPro,
-    layout: "/admin"
+    layout: "/admin",
+    invisible: true
   }
 ];
 
