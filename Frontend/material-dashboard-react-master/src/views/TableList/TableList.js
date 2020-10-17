@@ -43,33 +43,34 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
+  const tableHead = ["ID", "Name", "Amount($)", "Days till next payment", "Subscribed Since(MM/YYYY)"];
+  const tableData = [
+      ["1", "Netflix", "15.99", "28", "07/2016"],
+      ["2", "HBO", "14.99", "28", "02/2020"],
+      ["3", "Prime", "12.99", "28", "05/2015"],
+      ["4", "Medium", "5", "28", "10/2018"],
+      ["5", "Spotify", "9.99", "28", "11/2019"],
+  ]
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
-            <p className={classes.cardCategoryWhite}>
+            <h4 className={classes.cardTitleWhite}>Subscriptions At A Glance</h4>
+            {/* <p className={classes.cardCategoryWhite}>
               Here is a subtitle for this table
-            </p>
+            </p> */}
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
-              tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
-              ]}
+              tableHead={tableHead}
+              tableData={tableData}
             />
           </CardBody>
         </Card>
       </GridItem>
-      <GridItem xs={12} sm={12} md={12}>
+      {/* <GridItem xs={12} sm={12} md={12}>
         <Card plain>
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>
@@ -106,7 +107,7 @@ export default function TableList() {
             />
           </CardBody>
         </Card>
-      </GridItem>
+      </GridItem> */}
     </GridContainer>
   );
 }
