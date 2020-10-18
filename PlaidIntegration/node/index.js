@@ -58,7 +58,8 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
-
+const cors = require('cors');
+app.use(cors());
 app.get('/', function(request, response, next) {
   response.sendFile('./views/index.html', { root: __dirname });
 });
