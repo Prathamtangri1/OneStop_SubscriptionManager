@@ -34,6 +34,7 @@ import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 import Subscriptions from "views/Subscriptions/Subscriptions.js";
+import AccountDetails from "views/Account/AccountDetails.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
 
@@ -121,6 +122,14 @@ const dashboardRoutes = [
     rtlName: "",
     icon: Dashboard,
     component: Subscriptions,
+    layout: "/admin"
+  },
+  {
+    path: "/account",
+    name: "Account",
+    rtlName: "",
+    icon: Dashboard,
+    component: AccountDetails,
     layout: "/admin"
   }
 ];
