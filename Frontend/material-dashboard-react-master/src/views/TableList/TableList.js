@@ -43,13 +43,13 @@ const useStyles = makeStyles(styles);
 
 export default function TableList() {
   const classes = useStyles();
-  const tableHead = ["ID", "Name", "Amount($)", "Days till next payment", "Subscribed Since(MM/YYYY)"];
+  const tableHead = ["ID", "Name", "Category", "Amount($)", "Days till next payment", "Subscribed Since(MM/YYYY)"];
   const tableData = [
-      ["1", "Netflix", "15.99", "28", "07/2016"],
-      ["2", "HBO", "14.99", "28", "02/2020"],
-      ["3", "Prime", "12.99", "28", "05/2015"],
-      ["4", "Medium", "5", "28", "10/2018"],
-      ["5", "Spotify", "9.99", "28", "11/2019"],
+      ["1", "Netflix", "Entertainment", "15.99", "5", "07/2016"],
+      ["2", "Medium", "Productivity", "5", "16", "10/2018"],
+      ["3", "Prime", "Shopping/General", "12.99", "22", "05/2015"],
+      ["4", "Spotify", "Music", "9.99", "28", "11/2019"],
+      ["5", "HBO Now", "Entertainment", "139.99", "312", "02/2020"],
   ]
   return (
     <GridContainer>

@@ -34,6 +34,7 @@ import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 import Subscriptions from "views/Subscriptions/Subscriptions.js";
+import Recommendations from "views/Recommendations/Recommendations.js";
 import AccountDetails from "views/Account/AccountDetails.js";
 // core components/views for RTL layout
 import RTLPage from "views/RTLPage/RTLPage.js";
@@ -53,7 +54,8 @@ const dashboardRoutes = [
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,
-    layout: "/admin"
+    layout: "/admin",
+    invisible: true
   },
   {
     path: "/ataglance",
@@ -96,7 +98,8 @@ const dashboardRoutes = [
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
-    layout: "/admin"
+    layout: "/admin",
+    invisible: true
   },
   {
     path: "/rtl-page",
@@ -120,15 +123,23 @@ const dashboardRoutes = [
     path: "/subscriptions",
     name: "Subscriptions",
     rtlName: "",
-    icon: Dashboard,
+    icon: "subscriptions",
     component: Subscriptions,
+    layout: "/admin"
+  },
+  {
+    path: "/recommendations",
+    name: "Recommendations",
+    rtlName: "",
+    icon: "assistant",
+    component: Recommendations,
     layout: "/admin"
   },
   {
     path: "/account",
     name: "Account",
     rtlName: "",
-    icon: Dashboard,
+    icon: "account_balance_wallet",
     component: AccountDetails,
     layout: "/admin"
   }

@@ -39,12 +39,12 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="danger">
-                <Icon>featured_video</Icon>
+                <Icon>ondemand_video</Icon>
               </CardIcon>
               <h3 className={classes.cardBody}>
                 Netflix
               </h3>
-              <h4 className={classes.cardTitle}><small>$</small>20.00</h4>
+              <h4 className={classes.cardTitle}><small>$</small>15.99</h4>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -57,18 +57,38 @@ export default function Dashboard() {
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="info" stats icon>
+              <CardIcon color="success">
+              <Icon>import_contacts</Icon>
+              </CardIcon>
+                    
+              <h3 className={classes.cardBody}>
+                Medium
+              </h3>
+              <h4 className={classes.cardTitle}><small>$</small>5</h4>
+            </CardHeader>
+            <CardFooter stats>
+              <div className={classes.stats}>
+                <DateRange />
+                  In 16 days
+              </div>
+            </CardFooter>
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="info" stats icon>
               <CardIcon color="info">
-                <Store />
+                <Icon>shop</Icon>
               </CardIcon>
               <h3 className={classes.cardBody}>
                 Prime
               </h3>
-              <h4 className={classes.cardTitle}><small>$</small>200.00</h4>
+              <h4 className={classes.cardTitle}><small>$</small>12.99</h4>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <DateRange />
-                In 164 days
+                In 22 days
               </div>
             </CardFooter>
           </Card>
@@ -77,36 +97,17 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-                <Icon>info_outline</Icon>
+                  <Icon>music_note</Icon>
               </CardIcon>
               <h3 className={classes.cardBody}>
-                Hotstar
+                Spotify
               </h3>
-              <h4 className={classes.cardTitle}><small>$</small>15.00</h4>
+              <h4 className={classes.cardTitle}><small>$</small>9.99</h4>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <DateRange />
-                  In 16 days
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={6} md={3}>
-          <Card>
-            <CardHeader color="success" stats icon>
-              <CardIcon color="success">
-                <Icon>info_outline</Icon>
-              </CardIcon>
-              <h3 className={classes.cardBody}>
-                Medium
-              </h3>
-              <h4 className={classes.cardTitle}><small>$</small>5.00</h4>
-            </CardHeader>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <DateRange />
-                  In 16 days
+                  In 28 days
               </div>
             </CardFooter>
           </Card>

@@ -15,24 +15,24 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 const useStyles = makeStyles(styles);
 
-export default function Subscriptions() {
+export default function Recommendations() {
     const classes = useStyles();
     return(
         <div>
             <GridContainer>
                 <Card>
                     <CardHeader color="warning" stats icon>
-                    <CardIcon color="danger">
+                    <CardIcon color="success">
                         <Icon>ondemand_video</Icon>
                     </CardIcon>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
-                        Netflix
+                        Hulu
                     </h2>
                     <h4 className={classes.cardTitle}><small>$</small>15.99</h4>
-                    <h4 className={classes.cardTitle}>Next payment in: 5 days</h4>
-                    <p className={classes.cardCategory}>The company's primary business is its subscription-based streaming service which offers online streaming of a library of films and television series, including those produced in-house. As of April 2020, Netflix had over 193 million paid subscriptions worldwide, including 73 million in the United States.</p>
+                    <h4 className={classes.cardTitle}>Payment monthly</h4>
+                    <p className={classes.cardCategory}>Watch TV shows and movies online. Stream TV episodes of Grey's Anatomy, This Is Us, Bob's Burgers, Brooklyn Nine-Nine, Empire, SNL, and popular movies ...</p>
                     <p className={classes.cardCategory}>Category: Entertainment</p>
                     </CardBody>
                     <CardFooter stats>
@@ -45,18 +45,18 @@ export default function Subscriptions() {
                 </Card>
                 <Card>
                     <CardHeader color="info" stats icon>
-                        <CardIcon color="success">
-                        <Icon>import_contacts</Icon>
+                        <CardIcon color="danger">
+                        <Icon>whatshot</Icon>
                         </CardIcon>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
-                        Medium
+                        Tinder
                     </h2>
-                    <h4 className={classes.cardTitle}><small>$</small>5</h4>
-                    <h4 className={classes.cardTitle}>Next payment in: 16 days</h4>
-                    <p className={classes.cardCategory}>Medium is an open platform where readers find dynamic thinking, and where expert and undiscovered voices can share their writing on any topic.</p>
-                    <p className={classes.cardCategory}>Category: Productivity</p>
+                    <h4 className={classes.cardTitle}><small>$</small>99.99</h4>
+                    <h4 className={classes.cardTitle}>Payment yearly</h4>
+                    <p className={classes.cardCategory}>With 43 billion matches to date, Tinder® is the world's most popular dating app, making it the place to meet new people.</p>
+                    <p className={classes.cardCategory}>Category: Dating</p>
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
@@ -74,12 +74,12 @@ export default function Subscriptions() {
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
-                        Prime
+                        Blue Apron
                     </h2>
                     <h4 className={classes.cardTitle}><small>$</small>12.99</h4>
-                    <h4 className={classes.cardTitle}>Next payment in: 22 days</h4>
-                    <p className={classes.cardCategory}>Exclusive deals at Whole Foods Market and 5% back with the Amazon Prime ... Watch what you love with award-winning Amazon Originals, movies and TV</p>
-                    <p className={classes.cardCategory}>Category: Shopping/General</p>
+                    <h4 className={classes.cardTitle}>Payment weekly</h4>
+                    <p className={classes.cardCategory}>Blue Apron makes cooking fun and easy. We'll provide you with all the ingredients that you need to make a delicious meal in exactly the right proportions.</p>
+                    <p className={classes.cardCategory}>Category: Food</p>
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
@@ -91,18 +91,18 @@ export default function Subscriptions() {
                 </Card>
                 <Card>
                     <CardHeader color="info" stats icon>
-                        <CardIcon color="success">
-                            <Icon>music_note</Icon>
+                        <CardIcon color="warning">
+                            <Icon>emoji_nature</Icon>
                         </CardIcon>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
-                        Spotify
+                        Bumble
                     </h2>
                     <h4 className={classes.cardTitle}><small>$</small>9.99</h4>
-                    <h4 className={classes.cardTitle}>Next payment in: 28 days</h4>
-                    <p className={classes.cardCategory}>Spotify is a digital music service that gives you access to millions of songs.</p>
-                    <p className={classes.cardCategory}>Category: Music</p>
+                    <h4 className={classes.cardTitle}>Payment monthly</h4>
+                    <p className={classes.cardCategory}>Bumble has changed the way people date, find friends, and the perception of meeting online, for the better. Women make the first move. On iPhone + Android.</p>
+                    <p className={classes.cardCategory}>Category: Dating</p>
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
@@ -114,17 +114,17 @@ export default function Subscriptions() {
                 </Card>
                 <Card>
                     <CardHeader color="info" stats icon>
-                        <CardIcon color="primary">
+                        <CardIcon color="rose">
                             <Icon>ondemand_video</Icon>
                         </CardIcon>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
-                        HBO Now
+                        Peacock
                     </h2>
                     <h4 className={classes.cardTitle}><small>$</small>139.99</h4>
-                    <h4 className={classes.cardTitle}>Next payment in: 312 days</h4>
-                    <p className={classes.cardCategory}>With the HBO® app, enjoy instant and unlimited access to every episode of every season of the best HBO shows, movies, comedy, sports, and documentaries</p>
+                    <h4 className={classes.cardTitle}>Payment half-yearly</h4>
+                    <p className={classes.cardCategory}>Here's what you get with Peacock: Instant access to hundreds of movies from major Hollywood studios such as Universal, DreamWorks Animation, and Focus Features. Thousands of hours of iconic TV shows, including full seasons of buzzworthy faves, bingeworthy classics, and current-season NBC hits.</p>
                     <p className={classes.cardCategory}>Category: Entertainment</p>
                     </CardBody>
                     <CardFooter stats>
