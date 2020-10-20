@@ -1,3 +1,8 @@
+import atexit
+from apscheduler.scheduler import Scheduler
+from flask import request
+import flask
+import csv
 import mysql.connector
 import datetime
 import json
@@ -23,26 +28,31 @@ def setDebug():
 
 # -----------------------------</ Configurations -----------------------------
 # Configurations and Keys
-home_dir = '/home/candyzack/Desktop/VISA Project/oneStop3-keys/oneStopOffer/'
+home_dir = '/home/......'
+subs_data_file = home_dir+'subs_data.csv'
+AUTO_DB_DATA_REFRESH = False
+
+# ! Warning !  -   Backend Server won't run, if kept true
+MANUAL_DB_DATA_REFREH = False
 
 # Authentication Keys
-user_id = ''
-password = ''
+user_id = '<>'
+password = '<>'
 cert = home_dir+'cert.pem'
-key = home_dir+'key_5e9.pem'
+key = home_dir+'key_<>.pem'
 
 # MLE (Message Level Encryption) Keys
-keyId = '45c0d1'
+keyId = '<>'
 encryption_public_key_path = home_dir + \
-    'server_cert_45c0d.pem'
+    'server_cert_<>.pem'
 decryption_private_key_path = home_dir + \
-    'key_45c0d16e-1.pem'
+    'key_<>.pem'
 
 # DB Configs
 dbHost = "localhost"
-dbUser = "zack"
-dbPw = ""
-dbName = "main_db"
+dbUser = "<>"
+dbPw = "<>"
+dbName = "<>"
 
 # DEBUG MODE
 DEBUG = setDebug()
@@ -143,7 +153,7 @@ def initDb():
 # -----------------------------</ Methods -----------------------------
 
 
-def OffersDBInserts():
+def fetchOffersAndInsert():
     response, err = httpGet("https://sandbox.api.visa.com/vmorc/offers/v1/all")
     if err != None:
         print(err)
@@ -152,10 +162,18 @@ def OffersDBInserts():
     if DEBUG:
         print("\n\nResponse Header : \n", response.headers)
 
-    mydb = initDb()
-    merchants = {1: "Indiamags", 2: "magzter",
+    merchants = {1: "HBO Now", 2: "Magzter",
                  3: "Amazon Prime", 14: "Spotify", 15: "Netflix"}
-    for offer in response.content["Offers"]:
+    response_json = bToJson(response.content)
+
+    mydb = initDb()
+    # Truncate the Offers Table
+    mycursor = mydb.cursor()
+    sql = "TRUNCATE table offersTable;"
+    mycursor.execute(sql)
+    mydb.commit()
+
+    for offer in response_json["Offers"]:
         if offer["indexNumber"] in [1, 2, 3, 14, 15]:
             offerId = offer["indexNumber"]
             merchantName = merchants[offerId]
@@ -177,19 +195,14 @@ def OffersDBInserts():
                 cardPaymentTypeList.append(i["value"])
             cardPaymentTypeList = ','.join(cardPaymentTypeList)
 
-            mycursor = mydb.cursor()
-
-            # Truncate the Offers Table
-            sql = "TRUNCATE table offers_table;"
-            mycursor.execute(sql)
-            sql = "INSERT INTO offers_table (offerId, merchantName, offerTitle, offerShortDesc, offerLongDesc, validFrom, validTo, visaTerms, merchantTerms, redemptionCode, redemptionUrl, cardProductList, cardPaymentTypeList) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            mycursor.execute(sql, val)
-
+            # Insert latest Data
+            mycursor2 = mydb.cursor()
+            sql = "INSERT INTO offersTable (offerId, merchantName, offerTitle, offerShortDesc, offerLongDesc, validFrom, validTo, visaTerms, merchantTerms, redemptionCode, redemptionUrl, cardProductList, cardPaymentTypeList) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             val = (offerId, merchantName, offerTitle, offerShortDesc, offerLongDesc, validFrom, validTo,
                    visaTerms, merchantTerms, redemptionCode, redemptionUrl, cardProductList, cardPaymentTypeList)
-
+            mycursor2.execute(sql, val)
             mydb.commit()
-            print(mycursor.rowcount, "record inserted.")
+            print(mycursor2.rowcount, "record inserted.")
 
 
 def helloWorld():
@@ -223,13 +236,160 @@ def recurringTnx():
         print("\n\nResponse Header : \n", response.headers)
     print(bToJson(response.content, decrypt=True))
 
+
+def populateSubscriptionData():
+
+    # Truncate the Offers Table
+    mydb = initDb()
+    mycursor = mydb.cursor()
+    sql = "TRUNCATE table tnxTable;"
+    mycursor.execute(sql)
+    mydb.commit()
+
+    convert_col_to_int = [0, 3, 6, 7]
+    with open(subs_data_file) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        line_count = 0
+        for row in csv_reader:
+            line_count += 1
+            for i in range(len(row)):
+                if i in convert_col_to_int:
+                    row[i] = int(row[i])
+
+            # Insert tnx in DBs
+            mycursor = mydb.cursor()
+            sql = "INSERT INTO tnxTable (tnxId, merchantName , tnxDate , tnxAmt , tnxPAN , category , active , validityDays) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+            values = tuple(row)
+            mycursor.execute(sql, values)
+            mydb.commit()
+            print(mycursor.rowcount, "record inserted.")
+
 # ----------------------------- Methods />-----------------------------
+
+
+def allTnxD():
+    headers = ["tnxId", "merchantName", "tnxDate", "tnxAmt",
+               "tnxPAN", "category", "active", "validityDays"]
+    mydb = initDb()
+    mycursor = mydb.cursor()
+    sql = "SELECT * from tnxTable;"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    tnxs = {"count": 0, "transactions": []}
+
+    for x in myresult:
+        tnx = {}
+        for i in range(len(x)):
+            tnx[headers[i]] = x[i]
+        tnx["tnxDate"] = tnx["tnxDate"].strftime('%d-%m-%Y')
+        tnxs["transactions"].append(tnx)
+        tnxs["count"] += 1
+
+    print(tnxs)
+    with open("sample.json", "w") as outfile:
+        json.dump(tnxs, outfile)
+
+
+def allOffersD():
+    headers = ["offerId", "merchantName", "offerTitle", "offerShortDesc",
+               "offerLongDesc", "validFrom", "validTo", "visaTerms", "merchantTerms", "redemptionCode", "redemptionUrl", "cardProductList", "cardPaymentTypeList"]
+    mydb = initDb()
+    mycursor = mydb.cursor()
+    sql = "SELECT * from offersTable;"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    offers = {"count": 0, "offers": []}
+
+    for x in myresult:
+        offer = {}
+        for i in range(len(x)):
+            offer[headers[i]] = x[i]
+        offer["validFrom"] = offer["validFrom"].strftime('%d-%m-%Y')
+        offer["validTo"] = offer["validTo"].strftime('%d-%m-%Y')
+        offers["offers"].append(offer)
+        offers["count"] += 1
+
+    print(offers)
+    with open("sample.json", "w") as outfile:
+        json.dump(offers, outfile)
+
 
 # -----------------------------</ Main -----------------------------
 
+app = flask.Flask(__name__)
+
+# Cron Scheduler for Refreshing the DB data
+if AUTO_DB_DATA_REFRESH:
+    cron = Scheduler(daemon=True)
+    cron.start()
+
+    @cron.interval_schedule(minutes=1)
+    def job_function():
+        populateSubscriptionData()
+        fetchOffersAndInsert()
+
+    # Shutdown your cron thread if the web process is stopped
+    atexit.register(lambda: cron.shutdown(wait=False))
+
 
 if __name__ == "__main__":
-    recurringTnx()
-    helloWorld()
+    if MANUAL_DB_DATA_REFREH:
+        populateSubscriptionData()
+        fetchOffersAndInsert()
+        exit()
+    app.config["DEBUG"] = True
+
+    @app.route('/allTnx', methods=['GET'])
+    def allTnx():
+        headers = ["tnxId", "merchantName", "tnxDate", "tnxAmt",
+                   "tnxPAN", "category", "active", "validityDays"]
+        mydb = initDb()
+        mycursor = mydb.cursor()
+        sql = "SELECT * from tnxTable;"
+        mycursor.execute(sql)
+        myresult = mycursor.fetchall()
+        tnxs = {"count": 0, "transactions": []}
+
+        for x in myresult:
+            tnx = {}
+            for i in range(len(x)):
+                tnx[headers[i]] = x[i]
+            tnx["tnxDate"] = tnx["tnxDate"].strftime('%d-%m-%Y')
+            tnxs["transactions"].append(tnx)
+            tnxs["count"] += 1
+        response = app.response_class(
+            response=json.dumps(tnxs),
+            status=200,
+            mimetype='application/json'
+        )
+        return response
+
+    @app.route('/allOffers', methods=['GET'])
+    def allOffers():
+        headers = ["offerId", "merchantName", "offerTitle", "offerShortDesc",
+                   "offerLongDesc", "validFrom", "validTo", "visaTerms", "merchantTerms", "redemptionCode", "redemptionUrl", "cardProductList", "cardPaymentTypeList"]
+        mydb = initDb()
+        mycursor = mydb.cursor()
+        sql = "SELECT * from offersTable;"
+        mycursor.execute(sql)
+        myresult = mycursor.fetchall()
+        offers = {"count": 0, "offers": []}
+
+        for x in myresult:
+            offer = {}
+            for i in range(len(x)):
+                offer[headers[i]] = x[i]
+            offer["validFrom"] = offer["validFrom"].strftime('%d-%m-%Y')
+            offer["validTo"] = offer["validTo"].strftime('%d-%m-%Y')
+            offers["offers"].append(offer)
+            offers["count"] += 1
+
+        response = app.response_class(
+            response=json.dumps(offers),
+            status=200,
+            mimetype='application/json'
+        )
+        return response
+    app.run()
 
 # ----------------------------- Main />-----------------------------
