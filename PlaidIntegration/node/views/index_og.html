@@ -2,7 +2,40 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Plaid Quickstart Example</title>
+<title>OneStop - Subscription Manager</title>
+    <link rel="stylesheet" href="https://threads.plaid.com/threads.css">
+
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="./static/assets/images/favicon.png" type="image/png">
+        
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/animate.css">
+        
+    <!--====== Magnific Popup CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/magnific-popup.css">
+        
+    <!--====== Slick CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/slick.css">
+        
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/LineIcons.css">
+        
+    <!--====== Font Awesome CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/font-awesome.min.css">
+        
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/bootstrap.min.css">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="./static/assets/css/style.css">
 <link rel="stylesheet" href="https://threads.plaid.com/threads.css">
 
 <link rel="stylesheet" type="text/css" href="./static/style.css">
@@ -12,239 +45,249 @@
   <main class="main">
     <div class="grid">
       <div class="grid__column grid__column--is-twelve-columns">
-        <div id="banner" class="everpresent-content">
-          <h1 class="everpresent-content__heading">Plaid Quickstart</h1>
-          <p id="intro" class="everpresent-content__subheading">
-            An example application that outlines an end-to-end integration with Plaid
-          </p>
-          <p id="steps" class="everpresent-content__subheading">
-           Success! You just created an Item by linking your account.
-          </p>
-        </div>
-
         <div id="container" class="initial-view">
-          <p class="initial-view__description">
-            Click the button below to open a list of Institutions. After you select one, you’ll be guided through an authentication process. Upon completion, a public_token will be passed back to the server and exchanged for access_token.
-          </p>
-
-          <button id="link-btn" class="button button--is-primary" disabled>Connect with Plaid</button>
-          <div class="loading-indicator"></div>
-
+        <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->    
+       
+       
+        <!--====== PRELOADER PART START ======-->
+    
+        <div class="preloader">
+            <div class="loader">
+                <div class="ytp-spinner">
+                    <div class="ytp-spinner-container">
+                        <div class="ytp-spinner-rotator">
+                            <div class="ytp-spinner-left">
+                                <div class="ytp-spinner-circle"></div>
+                            </div>
+                            <div class="ytp-spinner-right">
+                                <div class="ytp-spinner-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div id="app" class="connected-view">
-          <div class="item-overview">
-            <div class="item-overview__column">
-              <h3 class="item-overview__heading">item_id</h3>
-              <p class="item-overview__id" id="item_id">san.asjsansakjsakjasjksajkas</p>
+    
+        <!--====== PRELOADER PART ENDS ======-->
+        
+        <!--====== HEADER PART START ======-->
+        
+        <header class="header-area">
+            <!-- <div class="navbar-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg">
+                                <a class="navbar-brand" href="index.html">
+                                    <img src="./static/assets/images/logo.png" alt="Logo">OneStop
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                    <span class="toggler-icon"></span>
+                                </button>
+    
+                                
+                            </nav> 
+                        </div>
+                    </div> 
+                </div> 
+            </div>  -->
+            
+            <div id="home" class="header-hero bg_cover" style="background-image: url(./static/assets/images/banner-bg.svg)">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="header-hero-content text-center">
+                                <h3 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                                    <img src="./static/assets/images/logo (another copy).png" alt="Logo">
+                                OneStop</h3>
+                                <h2 class="header-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">Get rid of subscription anxiety</h2>
+                                <p class="text wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">Manage and configure all your subscriptions at a single place. View useful statistics and get on top of all subscriptions' schedules. Just connect your bank account and our tool does everything else automatically!</p>
+                                <!-- <a href="#" class="main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s"></a> -->
+                                <button id="link-btn" class="button button--is-primary main-btn wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="1.1s">Get Started</button>
+                                <div class="loading-indicator"></div>
+                            </div> <!-- header hero content -->
+                        </div>
+                    </div> <!-- row -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="header-hero-image text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+                                <img src="./static/assets/images/about3.svg" alt="hero">
+                            </div> 
+                        </div>
+                    </div> 
+                </div> <!-- container -->
+                <div id="particles-1" class="particles"></div>
+            </div> <!-- header hero -->
+        </header>
+        
+        <!--====== HEADER PART ENDS ======-->
+        
+        <!--====== SERVICES PART START ======-->
+        
+        <section id="features" class="services-area pt-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="section-title text-center pb-40">
+                            <div class="line m-auto"></div>
+                            <h3 class="title">Clean and simple design, <span> Comes with everything you need!</span></h3>
+                        </div> <!-- section title -->
+                    </div>
+                </div> <!-- row -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-7 col-sm-8">
+                        <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <div class="services-icon">
+                                <img class="shape" src="./static/assets/images/services-shape.svg" alt="shape">
+                                <img class="shape-1" src="./static/assets/images/services-shape-1.svg" alt="shape">
+                                <i class="lni-baloon"></i>
+                            </div>
+                            <div class="services-content mt-30">
+                                <h4 class="services-title"><a href="#">Clean</a></h4>
+                                <p class="text">View all useful information including about every subscription at a glance, including the upcoming payments</p>
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                    <div class="col-lg-4 col-md-7 col-sm-8">
+                        <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <div class="services-icon">
+                                <img class="shape" src="./static/assets/images/services-shape.svg" alt="shape">
+                                <img class="shape-1" src="./static/assets/images/services-shape-2.svg" alt="shape">
+                                <i class="lni-cog"></i>
+                            </div>
+                            <div class="services-content mt-30">
+                                <h4 class="services-title"><a href="#">Robust</a></h4>
+                                <p class="text">Gathers subscriptions and their related information from all your accounts automatically. </p>
+                                
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                    <div class="col-lg-4 col-md-7 col-sm-8">
+                        <div class="single-services text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="services-icon">
+                                <img class="shape" src="./static/assets/images/services-shape.svg" alt="shape">
+                                <img class="shape-1" src="./static/assets/images/services-shape-3.svg" alt="shape">
+                                <i class="lni-bolt-alt"></i>
+                            </div>
+                            <div class="services-content mt-30">
+                                <h4 class="services-title"><a href="#">Powerful</a></h4>
+                                <p class="text">See detailed statistics related to the financial activity due to recurrent transactions. </p>
+                                
+                            </div>
+                        </div> <!-- single services -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </section>
+        
+        <!--====== SERVICES PART ENDS ======-->
+        
+        
+        
+        <!--====== FOOTER PART START ======-->
+        
+        <footer id="footer" class="footer-area pt-120">
+            <div class="container">
+                <div class="footer-widget pb-100">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-8">
+                            <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                                <a class="logo" href="#">
+                                    
+                                    <h2 class="header-sub-title wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s" style="color: white;">
+                                    OneStop </h2>
+                                </a>
+                                <p class="text">A one stop solution to all your subscriptions problems</p>
+                                <ul class="social">
+                                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                    <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                                </ul>
+                            </div> <!-- footer about -->
+                        </div>
+                    </div> <!-- row -->
+                </div> <!-- footer widget -->
+                <div class="footer-copyright">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright d-sm-flex justify-content-between">
+                                <div class="copyright-content">
+                                    <p class="text">Step Up Bootcamp Project by Team 3</a></p>
+                                </div> <!-- copyright content -->
+                            </div> <!-- copyright -->
+                        </div>
+                    </div> <!-- row -->
+                </div> <!-- footer copyright -->
+            </div> <!-- container -->
+            <div id="particles-2"></div>
+        </footer>
+        
+        <!--====== FOOTER PART ENDS ======-->
+        
+        <!--====== BACK TOP TOP PART START ======-->
+    
+        <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    
+        <!--====== BACK TOP TOP PART ENDS ======-->   
+        
+        <!--====== PART START ======-->
+        
+    <!--
+        <section class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-"></div>
+                </div>
             </div>
-            <div class="item-overview__column">
-              <h3 class="item-overview__heading">access_token</h3>
-              <p class="item-overview__id" id="access_token">••••••••hsakjsl</p>
-            </div>
-            <div style="clear: both"></div>
-          </div>
-
-          <p>Now that you have an access_token you can make all of the following API requests:</p>
-
-          <div class="box">
-            <h3 class="box__heading">Products</h3>
-
-            <!-- Auth -->
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Auth</div>
-                <div class="item-data-row__endpoint">/auth/get</div>
-                <div class="item-data-row__description">Retrieve account and routing numbers for checking and savings accounts.</div>
-              </div>
-              <div class="item-data-row__right">
-                <button id="get-auth-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-              <div class="item-data-row__response">
-                <table><tbody id="get-auth-data"></tbody></table>
-              </div>
-            </div>
-
-            <!--Transactions -->
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Transactions</div>
-                <div class="item-data-row__endpoint">/transactions/get</div>
-                <div class="item-data-row__description">Retrieve transactions for credit and depository accounts.</div>
-              </div>
-              <div class="item-data-row__right">
-                <button id="get-transactions-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-              <div class="item-data-row__response">
-                <table><tbody id="get-transactions-data"></tbody></table>
-              </div>
-            </div>
-
-            <!-- Identity -->
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Identity</div>
-                <div class="item-data-row__endpoint">/identity/get</div>
-                <div class="item-data-row__description">Retrieve Identity information on file with the bank. Reduce fraud by comparing user-submitted data to validate identity.</div>
-              </div>
-              <div class="item-data-row__right">
-                <button id="get-identity-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-              <div class="item-data-row__response">
-                <table><tbody id="get-identity-data"></tbody></table>
-              </div>
-            </div>
-
-            <!-- Balance -->
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Balance</div>
-                <div class="item-data-row__endpoint">/accounts/balance/get</div>
-                <div class="item-data-row__description">Check balances in real time to prevent non-sufficient funds fees.</div>
-              </div>
-              <div class="item-data-row__right">
-                <button id="get-balance-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-              <div class="item-data-row__response">
-                <table><tbody id="get-balance-data"></tbody></table>
-              </div>
-            </div>
-
-            <!-- Assets (hidden unless 'assets' is included in the product list) -->
-            <div id='assets' class="item-data-row" style='display:none;'>
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Assets</div>
-                <div class="item-data-row__endpoint">/asset_report/*</div>
-                <div class="item-data-row__description">Create a point-in-time snapshot of a user's assets.</div>
-              </div>
-
-              <div class="item-data-row__right">
-                <button id="get-assets-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-
-                <a id="download-assets-pdf-btn" class="button button--is-small button--is-primary button--is-full-width" style="display: none; margin: 10px 0px;";>Download as PDF</a>
-              </div>
-
-              <div class="item-data-row__response">
-                <table><tbody id="get-assets-data"></tbody></table>
-              </div>
-            </div>
-
-            <!-- Holdings -->
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Holdings</div>
-                <div class="item-data-row__endpoint">/investments/holdings/get</div>
-                <div class="item-data-row__description">Retrieve investment holdings on file with the bank, brokerage, or investment institution. Analyze over-exposure to market segments.</div>
-              </div>
-              <div class="item-data-row__right">
-                <button id="get-holdings-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-              <div class="item-data-row__response">
-                <table><tbody id="get-holdings-data"></tbody></table>
-              </div>
-            </div>
-
-            <!-- Investment Transactions -->
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Investment Transactions</div>
-                <div class="item-data-row__endpoint">/investments/transactions/get</div>
-                <div class="item-data-row__description">Retrieve investment transactions to analyze cash flow and trading performance.</div>
-              </div>
-              <div class="item-data-row__right">
-                <button id="get-investment-transactions-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-              <div class="item-data-row__response">
-                <table><tbody id="get-investment-transactions-data"></tbody></table>
-              </div>
-            </div>
-
-            <!-- UK Payment Initiation (hidden unless 'payment_initiation' is included in the product list) -->
-            <div class="payment_initiation item-data-row" style='display:none;'>
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__nicename">Payment Initiation</div>
-                <div class="item-data-row__endpoint">/payment_initiation/payment/get</div>
-                <div class="item-data-row__description">Retrieve payment initiation status for the payment you just initiated.</div>
-              </div>
-
-              <div class="item-data-row__right">
-                <button id="get-payment-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-
-              <div class="item-data-row__response">
-                <table><tbody id="get-payment-data"></tbody></table>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="box">
-            <h3 class="box__heading">Item management</h3>
-
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__endpoint">/item/get</div>
-                <div class="item-data-row__description">Retrieve information about an Item, like the institution, billed products, available products, and webhook information.</div>
-              </div>
-
-              <div class="item-data-row__right">
-                <button id="get-item-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-
-              <div class="item-data-row__response">
-                <table><tbody id="get-item-data"></tbody></table>
-              </div>
-            </div>
-
-            <div class="item-data-row">
-              <div class="item-data-row__left">
-                <div class="item-data-row__request-type">post</div>
-              </div>
-              <div class="item-data-row__center">
-                <div class="item-data-row__endpoint">/accounts/get</div>
-                <div class="item-data-row__description">Retrieve high-level information about all accounts associated with an Item.</div>
-              </div>
-
-              <div class="item-data-row__right">
-                <button id="get-accounts-btn" class="button button--is-small button--is-default button--is-full-width">Send request</button>
-              </div>
-
-              <div class="item-data-row__response">
-                <table><tbody id="get-accounts-data"></tbody></table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </section>
+    -->
+        
+        <!--====== PART ENDS ======-->
+      </div></div>
     </div>
   </main>
+  <!--====== Jquery js ======-->
+<script src="./static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./static/assets/js/vendor/modernizr-3.7.1.min.js"></script>
+
+<!--====== Bootstrap js ======-->
+<script src="./static/assets/js/popper.min.js"></script>
+<script src="./static/assets/js/bootstrap.min.js"></script>
+
+<!--====== Plugins js ======-->
+<script src="./static/assets/js/plugins.js"></script>
+
+<!--====== Slick js ======-->
+<script src="./static/assets/js/slick.min.js"></script>
+
+<!--====== Ajax Contact js ======-->
+<script src="./static/assets/js/ajax-contact.js"></script>
+
+<!--====== Counter Up js ======-->
+<script src="./static/assets/js/waypoints.min.js"></script>
+<script src="./static/assets/js/jquery.counterup.min.js"></script>
+
+<!--====== Magnific Popup js ======-->
+<script src="./static/assets/js/jquery.magnific-popup.min.js"></script>
+
+<!--====== Scrolling Nav js ======-->
+<script src="./static/assets/js/jquery.easing.min.js"></script>
+<script src="./static/assets/js/scrolling-nav.js"></script>
+
+<!--====== wow js ======-->
+<script src="./static/assets/js/wow.min.js"></script>
+
+<!--====== Particles js ======-->
+<script src="./static/assets/js/particles.min.js"></script>
+
+<!--====== Main js ======-->
+<script src="./static/assets/js/main.js"></script> 
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
@@ -257,6 +300,7 @@
         $('#access_token').text(page_info.access_token);
         $('#intro').hide();
         // $('#app, #steps').fadeIn('slow');
+        console.log("Came here 1");
         window.location.replace("http://localhost:3000");
       });
     }
@@ -291,6 +335,7 @@
                 $('#access_token').text(data.access_token);
                 $('#intro').hide();
                 // $('#app, #steps').fadeIn('slow');
+                console.log("Came here 2");
                 window.location.replace("http://localhost:3000");
               });
             });
@@ -319,6 +364,7 @@
                 $('#access_token').text(data.access_token);
                 $('#intro').hide();
                 // $('#app, #steps').fadeIn('slow');
+                console.log("Came here 3");
                 window.location.replace("http://localhost:3000");
               });
             });
@@ -339,6 +385,7 @@
           $('#access_token').text(accessToken);
           $('#intro').hide();
           // $('#app, #steps').fadeIn('slow');
+          console.log("Came here 4");
           window.location.replace("http://localhost:3000");
         });
       });
