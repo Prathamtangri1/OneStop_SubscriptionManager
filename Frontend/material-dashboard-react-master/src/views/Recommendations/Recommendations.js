@@ -25,6 +25,7 @@ export default function Recommendations() {
                     <CardIcon color="success">
                         <Icon>ondemand_video</Icon>
                     </CardIcon>
+                    <h4 className={classes.cardBody}>Discount of 10% on Visa cards</h4>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
@@ -37,8 +38,7 @@ export default function Recommendations() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
-                            <Button>Schedule Next Payment</Button>
+                            <Button>Subscribe</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
                     </CardFooter>
@@ -48,6 +48,7 @@ export default function Recommendations() {
                         <CardIcon color="danger">
                         <Icon>whatshot</Icon>
                         </CardIcon>
+                        <h4 className={classes.cardBody}>Discount of 2% on Visa cards</h4>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
@@ -60,8 +61,7 @@ export default function Recommendations() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
-                            <Button>Schedule Next Payment</Button>
+                            <Button>Subscribe</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
                     </CardFooter>
@@ -71,6 +71,7 @@ export default function Recommendations() {
                         <CardIcon color="info">
                             <Icon>shop</Icon>
                         </CardIcon>
+                        <h4 className={classes.cardBody}>Discount of 5% on Visa cards</h4>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
@@ -83,8 +84,7 @@ export default function Recommendations() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
-                            <Button>Schedule Next Payment</Button>
+                            <Button>Subscribe</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
                     </CardFooter>
@@ -94,6 +94,7 @@ export default function Recommendations() {
                         <CardIcon color="warning">
                             <Icon>emoji_nature</Icon>
                         </CardIcon>
+                        <h4 className={classes.cardBody}>Discount of 4% on Visa cards</h4>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
@@ -106,8 +107,7 @@ export default function Recommendations() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
-                            <Button>Schedule Next Payment</Button>
+                            <Button>Subscribe</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
                     </CardFooter>
@@ -117,6 +117,7 @@ export default function Recommendations() {
                         <CardIcon color="rose">
                             <Icon>ondemand_video</Icon>
                         </CardIcon>
+                        <h4 className={classes.cardBody}>Discount of 3% on Visa cards</h4>
                     </CardHeader>
                     <CardBody>
                     <h2 className={classes.cardBody}>
@@ -129,8 +130,7 @@ export default function Recommendations() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
-                            <Button>Schedule Next Payment</Button>
+                        <Button>Subscribe</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
                     </CardFooter>
@@ -139,9 +139,3 @@ export default function Recommendations() {
         </div>
     );
 }
-
-// ["1", "Netflix", "15.99", "28", "07/2016"],
-//       ["2", "HBO", "14.99", "28", "02/2020"],
-//       ["3", "Prime", "12.99", "312", "05/2015"],
-//       ["4", "Medium", "5", "28", "10/2018"],
-//       ["5", "Spotify", "9.99", "28", "11/2019"],
