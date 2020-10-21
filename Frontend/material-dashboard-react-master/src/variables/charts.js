@@ -17,15 +17,15 @@ var delays2 = 80,
 
 const dailySalesChart = {
   data: {
-    labels: ["M", "T", "W", "T", "F", "S", "S"],
-    series: [[12, 17, 7, 17, 23, 18, 38]]
+    labels: ["Entertainment", "Shopping/general", "Music", "Productivity", "Dating", "Food"],
+    series: [[205.99, 99.99, 80.99, 60, 29.99, 10]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
       tension: 0
     }),
     low: 0,
-    high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 250, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
     chartPadding: {
       top: 0,
       right: 0,
@@ -72,6 +72,8 @@ const dailySalesChart = {
 const emailsSubscriptionChart = {
   data: {
     labels: [
+      "Nov",
+      "Dec",
       "Jan",
       "Feb",
       "Mar",
@@ -81,18 +83,16 @@ const emailsSubscriptionChart = {
       "Jul",
       "Aug",
       "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
+      "Oct"
     ],
-    series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]]
+    series: [[150, 55, 135, 85, 105, 105, 105, 150, 105, 115, 105, 105]]
   },
   options: {
     axisX: {
       showGrid: false
     },
     low: 0,
-    high: 1000,
+    high: 175,
     chartPadding: {
       top: 0,
       right: 5,
@@ -136,15 +136,28 @@ const emailsSubscriptionChart = {
 
 const completedTasksChart = {
   data: {
-    labels: ["12am", "3pm", "6pm", "9pm", "12pm", "3am", "6am", "9am"],
-    series: [[230, 750, 450, 300, 280, 240, 200, 190]]
+    labels: [
+      "Nov",
+      "Dec",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct"
+    ],
+    series: [[7, 3, 6, 4, 5, 5, 5, 7, 5, 6, 5, 5]]
   },
   options: {
     lineSmooth: Chartist.Interpolation.cardinal({
       tension: 0
     }),
     low: 0,
-    high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+    high: 8, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
     chartPadding: {
       top: 0,
       right: 0,

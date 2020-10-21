@@ -120,7 +120,7 @@ export default function Dashboard() {
               <ChartistGraph
                 className="ct-chart"
                 data={emailsSubscriptionChart.data}
-                type="Bar"
+                type="Line"
                 options={emailsSubscriptionChart.options}
                 responsiveOptions={emailsSubscriptionChart.responsiveOptions}
                 listener={emailsSubscriptionChart.animation}
@@ -143,23 +143,20 @@ export default function Dashboard() {
               <ChartistGraph
                 className="ct-chart"
                 data={dailySalesChart.data}
-                type="Line"
+                type="Bar"
                 options={dailySalesChart.options}
                 listener={dailySalesChart.animation}
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Daily Sales</h4>
-              <p className={classes.cardCategory}>
-                <span className={classes.successText}>
-                  <ArrowUpward className={classes.upArrowCardCategory} /> 55%
-                </span>{" "}
-                increase in today sales.
+              <h4 className={classes.cardTitle}>Amount spent category wise</h4>
+              <p className={classes.cardCategory}>Last Year
+                
               </p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
-                <AccessTime /> updated 4 minutes ago
+                <AccessTime /> Data retrieved a few seconds ago
               </div>
             </CardFooter>
           </Card>
@@ -176,12 +173,12 @@ export default function Dashboard() {
               />
             </CardHeader>
             <CardBody>
-              <h4 className={classes.cardTitle}>Completed Tasks</h4>
-              <p className={classes.cardCategory}>Last Campaign Performance</p>
+              <h4 className={classes.cardTitle}>Number of subscriptions per month</h4>
+              <p className={classes.cardCategory}>Last year</p>
             </CardBody>
             <CardFooter chart>
-              <div className={classes.stats}>
-                <AccessTime /> campaign sent 2 days ago
+            <div className={classes.stats}>
+                <AccessTime /> Data retrieved a few seconds ago
               </div>
             </CardFooter>
           </Card>
