@@ -1,0 +1,175 @@
+{
+    "count": 17,
+    "transactions": [
+        {
+            "tnxId": 1,
+            "merchantName": "Netflix",
+            "tnxDate": "02-01-2020",
+            "tnxAmt": 199,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "OTT",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 2,
+            "merchantName": "Netflix",
+            "tnxDate": "02-02-2020",
+            "tnxAmt": 199,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "OTT",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 3,
+            "merchantName": "Netflix",
+            "tnxDate": "02-03-2020",
+            "tnxAmt": 199,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "OTT",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 4,
+            "merchantName": "Netflix",
+            "tnxDate": "15-09-2020",
+            "tnxAmt": 499,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "OTT",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 5,
+            "merchantName": "Netflix",
+            "tnxDate": "15-10-2020",
+            "tnxAmt": 499,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "OTT",
+            "active": 1,
+            "validityDays": 30
+        },
+        {
+            "tnxId": 6,
+            "merchantName": "Medium",
+            "tnxDate": "18-07-2020",
+            "tnxAmt": 349,
+            "tnxPAN": "4100-4321-4321-4321",
+            "category": "Productivity",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 7,
+            "merchantName": "Medium",
+            "tnxDate": "18-08-2020",
+            "tnxAmt": 349,
+            "tnxPAN": "4100-4321-4321-4321",
+            "category": "Productivity",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 8,
+            "merchantName": "Medium",
+            "tnxDate": "18-09-2020",
+            "tnxAmt": 349,
+            "tnxPAN": "4100-4321-4321-4321",
+            "category": "Productivity",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 9,
+            "merchantName": "Medium",
+            "tnxDate": "18-10-2020",
+            "tnxAmt": 349,
+            "tnxPAN": "4100-4321-4321-4321",
+            "category": "Productivity",
+            "active": 1,
+            "validityDays": 28
+        },
+        {
+            "tnxId": 10,
+            "merchantName": "Amazon Prime",
+            "tnxDate": "14-05-2020",
+            "tnxAmt": 129,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "Shopping/General",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 11,
+            "merchantName": "Amazon Prime",
+            "tnxDate": "14-10-2020",
+            "tnxAmt": 129,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "Shopping/General",
+            "active": 1,
+            "validityDays": 30
+        },
+        {
+            "tnxId": 12,
+            "merchantName": "Spotify",
+            "tnxDate": "23-03-2020",
+            "tnxAmt": 119,
+            "tnxPAN": "4100-4321-4321-4321",
+            "category": "Music",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 13,
+            "merchantName": "Spotify",
+            "tnxDate": "23-04-2020",
+            "tnxAmt": 119,
+            "tnxPAN": "4100-4321-4321-4321",
+            "category": "Music",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 14,
+            "merchantName": "Spotify",
+            "tnxDate": "20-10-2020",
+            "tnxAmt": 59,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "Music",
+            "active": 1,
+            "validityDays": 30
+        },
+        {
+            "tnxId": 15,
+            "merchantName": "HBO Now",
+            "tnxDate": "27-06-2020",
+            "tnxAmt": 1150,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "OTT",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 16,
+            "merchantName": "HBO Now",
+            "tnxDate": "29-07-2020",
+            "tnxAmt": 1245,
+            "tnxPAN": "4100-1234-1234-1234",
+            "category": "OTT",
+            "active": 0,
+            "validityDays": 0
+        },
+        {
+            "tnxId": 17,
+            "merchantName": "HBO Now",
+            "tnxDate": "29-09-2020",
+            "tnxAmt": 1038,
+            "tnxPAN": "4100-4321-4321-4321",
+            "category": "OTT",
+            "active": 1,
+            "validityDays": 30
+        }
+    ]
+}
