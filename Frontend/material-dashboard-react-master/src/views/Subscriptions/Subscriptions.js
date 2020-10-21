@@ -37,7 +37,7 @@ export default function Subscriptions() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
+                            <Button>Change Plan</Button>
                             <Button>Schedule Next Payment</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
@@ -60,7 +60,7 @@ export default function Subscriptions() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
+                        <Button>Change Plan</Button>
                             <Button>Schedule Next Payment</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
@@ -83,7 +83,7 @@ export default function Subscriptions() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
+                        <Button>Change Plan</Button>
                             <Button>Schedule Next Payment</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
@@ -106,7 +106,7 @@ export default function Subscriptions() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
+                        <Button>Change Plan</Button>
                             <Button>Schedule Next Payment</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
@@ -129,7 +129,7 @@ export default function Subscriptions() {
                     </CardBody>
                     <CardFooter stats>
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                            <Button>Upgrade Plan</Button>
+                        <Button>Change Plan</Button>
                             <Button>Schedule Next Payment</Button>
                             <Button>Go to website</Button>
                         </ButtonGroup>
