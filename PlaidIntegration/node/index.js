@@ -61,7 +61,7 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 app.get('/', function(request, response, next) {
-  response.sendFile('./views/index.html', { root: __dirname });
+  response.sendFile('./views/index_og.html', { root: __dirname });
 });
 
 // This is an endpoint defined for the OAuth flow to redirect to.
