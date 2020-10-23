@@ -1,0 +1,27 @@
+CREATE TABLE `tnxTable` (
+  `tnxId` int DEFAULT NULL,
+  `merchantName` varchar(30) DEFAULT NULL,
+  `tnxDate` date DEFAULT NULL,
+  `tnxAmt` int DEFAULT NULL,
+  `tnxPAN` varchar(30) DEFAULT NULL,
+  `category` varchar(30) DEFAULT NULL,
+  `active` int DEFAULT NULL,
+  `validityDays` int DEFAULT NULL
+)
+
+
+CREATE TABLE `offersTable` (
+  `offerId` varchar(20) DEFAULT NULL,
+  `merchantName` varchar(100) DEFAULT NULL,
+  `offerTitle` varchar(200) DEFAULT NULL,
+  `offerShortDesc` varchar(200) DEFAULT NULL,
+  `offerLongDesc` varchar(200) DEFAULT NULL,
+  `validFrom` date DEFAULT NULL,
+  `validTo` date DEFAULT NULL,
+  `visaTerms` varchar(200) DEFAULT NULL,
+  `merchantTerms` varchar(200) DEFAULT NULL,
+  `redemptionCode` varchar(30) DEFAULT NULL,
+  `redemptionUrl` varchar(100) DEFAULT NULL,
+  `cardProductList` varchar(200) DEFAULT NULL,
+  `cardPaymentTypeList` varchar(200) DEFAULT NULL
+)
